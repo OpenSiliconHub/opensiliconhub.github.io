@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenSiliconHub</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <header>
     <div class="banner-title">
-      <a href="index.html">
+      <a href="/">
         <pre>
  ██████╗ ███████╗██╗  ██╗
 ██╔═══██╗██╔════╝██║  ██║
@@ -23,8 +23,8 @@
     </div>
     <nav>
       <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="projects.html">Projects</a>
+        <a href="/" class="active">Home</a>
+        <a href="/projects/">Projects</a>
         <a href="#">About</a>
         <a href="#">News</a>
       </div>
@@ -54,20 +54,6 @@
     &copy; 2026 OpenSiliconHub
   </footer>
 
-  <script>
-    const dropdown = document.querySelector('.contact-dropdown');
-    const btn = dropdown.querySelector('.contact-btn');
-
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = dropdown.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen);
-    });
-
-    document.addEventListener('click', () => {
-      dropdown.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-  </script>
+  <script src="/main.js"></script>
 </body>
 </html>
