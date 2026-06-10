@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUBLEQ CPU — OpenSiliconHub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="banner-title">
+      <a href="index.html">
+        <pre>
+ ██████╗ ███████╗██╗  ██╗
+██╔═══██╗██╔════╝██║  ██║
+██║   ██║███████╗███████║
+██║   ██║╚════██║██╔══██║
+╚██████╔╝███████║██║  ██║
+ ╚═════╝ ╚══════╝╚═╝  ╚═╝
+        </pre>
+        <h1>OpenSiliconHub</h1>
+      </a>
+    </div>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="#">About</a>
+        <a href="#">News</a>
+      </div>
+      <div class="nav-actions">
+        <div class="contact-dropdown">
+          <button class="contact-btn" type="button" aria-expanded="false" aria-haspopup="true">Contact Us</button>
+          <div class="contact-panel">
+            <a href="mailto:opensiliconhub@proton.me">opensiliconhub@proton.me</a>
+          </div>
+        </div>
+        <a href="https://github.com/OpenSiliconHub" target="_blank" rel="noopener">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <a class="back-link" href="projects.html">&larr; Back to Projects</a>
+
+    <div class="page-header">
+      <h2>SUBLEQ CPU</h2>
+      <p>An open-source, single-instruction processor core for education, experimentation, and FPGA deployment.</p>
+    </div>
+
+    <div class="content-panel">
+      <h3>Overview</h3>
+      <p>
+        SUBLEQ (Subtract and Branch if Less than or Equal to zero) is a minimalist computer architecture
+        built around a single instruction. Despite its simplicity, a SUBLEQ machine is Turing-complete —
+        any program can be expressed as a sequence of memory operations.
+      </p>
+      <p>
+        The OpenSiliconHub SUBLEQ CPU project aims to provide a clean, well-documented RTL implementation
+        suitable for FPGA synthesis, simulation, and teaching how processors work from the ground up.
+      </p>
+
+      <h3>Instruction Format</h3>
+      <p>Each instruction is three memory addresses:</p>
+      <p><code>SUBLEQ A, B, C</code> — subtract the value at address B from the value at address A, store the result at A, then branch to C if the result is ≤ 0.</p>
+      <p>Special addresses are reserved for I/O and halting, keeping the datapath compact while still supporting interactive programs.</p>
+
+      <h3>Goals</h3>
+      <ul>
+        <li>Provide a readable, synthesizable Verilog/VHDL core</li>
+        <li>Support FPGA targets with a simple memory-mapped I/O model</li>
+        <li>Include example programs and an assembler toolchain</li>
+        <li>Serve as a reference design for custom SoC and educational use</li>
+      </ul>
+
+      <h3>Status</h3>
+      <p>
+        This project is in early development. Core architecture is defined and initial RTL is being drafted.
+        Contributions, review, and test program ideas are welcome.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 OpenSiliconHub
+  </footer>
+
+  <script>
+    const dropdown = document.querySelector('.contact-dropdown');
+    const btn = dropdown.querySelector('.contact-btn');
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      dropdown.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  </script>
+</body>
+</html>

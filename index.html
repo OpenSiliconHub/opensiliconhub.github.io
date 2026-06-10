@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenSiliconHub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="banner-title">
+      <a href="index.html">
+        <pre>
+ ██████╗ ███████╗██╗  ██╗
+██╔═══██╗██╔════╝██║  ██║
+██║   ██║███████╗███████║
+██║   ██║╚════██║██╔══██║
+╚██████╔╝███████║██║  ██║
+ ╚═════╝ ╚══════╝╚═╝  ╚═╝
+        </pre>
+        <h1>OpenSiliconHub</h1>
+      </a>
+    </div>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="#">About</a>
+        <a href="#">News</a>
+      </div>
+      <div class="nav-actions">
+        <div class="contact-dropdown">
+          <button class="contact-btn" type="button" aria-expanded="false" aria-haspopup="true">Contact Us</button>
+          <div class="contact-panel">
+            <a href="mailto:opensiliconhub@proton.me">opensiliconhub@proton.me</a>
+          </div>
+        </div>
+        <a href="https://github.com/OpenSiliconHub" target="_blank" rel="noopener">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h2>Welcome!</h2>
+      <p>Professional collaboration in FPGA cores, custom cores, industrial-standard cores, and IP cores.</p>
+      <div class="notice">🚧 This site is under construction 🚧</div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 OpenSiliconHub
+  </footer>
+
+  <script>
+    const dropdown = document.querySelector('.contact-dropdown');
+    const btn = dropdown.querySelector('.contact-btn');
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      dropdown.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  </script>
+</body>
+</html>
