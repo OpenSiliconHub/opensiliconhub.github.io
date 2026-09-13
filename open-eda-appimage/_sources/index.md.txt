@@ -1,0 +1,55 @@
+# open-eda-appimage
+
+**Portable, single-file AppImages for open-source EDA tools.**
+Built automatically from official upstream releases — no installation,
+no dependency hell, no containers.
+
+One file. One `chmod`. Optionally one symlink to put it on `$PATH`.
+Delete the file when you're done — nothing else to clean up.
+
+---
+
+## Why this exists
+
+If you've ever tried to use modern open-source EDA tooling on a
+normal Linux system, you've hit at least one of these:
+
+- **Distro packages are years behind.** The version in `apt` / `dnf`
+  is often 2–3 major releases old by the time a new upstream tag lands.
+- **Building from source is a project in itself.** Toolchains, LLVM
+  versions, Tcl, readline, zlib — every tool has its own dependency
+  story, and a clean machine never stays clean.
+- **Full bundles are enormous.** Multi-tool distributions are
+  excellent, but pulling in ~2 GB when you need one binary is a hard sell.
+- **Reproducibility is fragile.** Rebuilding the same tool on a
+  different machine often gives a different result.
+
+`open-eda-appimage` takes a different route: **one AppImage per tool,
+per upstream release, built automatically.** Every build runs in public
+GitHub Actions from the official source tarball. No forks, no patches,
+no hidden steps. Download one file, run it, delete it when you're done.
+
+---
+
+## Available tools
+
+| Tool  | Version | Status   | Download |
+|-------|---------|----------|----------|
+| Yosys | 0.69    | ✅ Stable | [Releases](https://github.com/opensiliconhub/open-eda-appimage/releases) |
+| —     | —       | More tools planned | — |
+
+Additional tools will land as the build pipeline is generalized.
+Open an issue if you want to propose one.
+
+---
+
+```{toctree}
+:maxdepth: 2
+:caption: Contents
+
+installation
+usage/index
+verifying-downloads
+build-process
+contributing
+```
